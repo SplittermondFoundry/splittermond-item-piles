@@ -14,8 +14,8 @@ jobs:
   release-new-version:
     runs-on: ubuntu-latest
     env:
-      outputName: splittermond-${{github.event.inputs.version}}
-      outputFile: splittermond-${{github.event.inputs.version}}.zip
+      outputName: splittermond-item-piles-${{github.event.inputs.version}}
+      outputFile: splittermond-item-piles-${{github.event.inputs.version}}.zip
       prefixedVersion: v${{github.event.inputs.version}}
     steps:
       - name: check env
