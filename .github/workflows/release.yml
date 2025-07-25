@@ -47,6 +47,8 @@ jobs:
           fileToUpdate: './public/module.json'
           newManifest: https://github.com/SplittermondFoundry/splittermond-item-piles/releases/download/${{env.prefixedVersion}}/system.json
           newDownload: https://github.com/SplittermondFoundry/splittermond-item-piles/releases/download/${{env.prefixedVersion}}/${{env.outputFile}}
+      - name: Configure npm for GitHub Packages
+        run: npm set "//npm.pkg.github.com/:_authToken=${{secrets.GITHUB_TOKEN}}"
       - name: Install dependencies
         run: npm install
       - name: Build
