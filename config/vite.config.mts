@@ -1,6 +1,5 @@
-import {defineConfig, ResolvedConfig} from 'vite';
+import {defineConfig} from 'vite';
 import path from "path";
-import fs from 'fs/promises';
 
 export default defineConfig({
     root: path.resolve(__dirname, '../src/'),
