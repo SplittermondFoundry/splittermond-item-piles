@@ -9,12 +9,12 @@ console.log(`Inputs: pathToModuleJson: ${pathToModuleJson}, isDryRun: ${isDryRun
 const systemJson = JSON.parse(fs.readFileSync(pathToModuleJson, 'utf-8'));
 
 const  body = {
-    "id": "splittermond",
+    "id": "splittermond-item-piles",
     "dry-run": isDryRun,
     "release": {
         "version": systemJson.version,
         "manifest": systemJson.manifest,
-        "notes": `https://github.com/SplittermondFoundry/splittermond/releases/tag/v${systemJson.version}`,
+        "notes": `https://github.com/SplittermondFoundry/splittermond-item-piles/releases/tag/v${systemJson.version}`,
         "compatibility": systemJson.compatibility
     }
 }
