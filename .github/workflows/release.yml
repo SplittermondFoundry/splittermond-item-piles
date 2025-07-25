@@ -45,7 +45,7 @@ jobs:
         run: node ./.github/scripts/replace_links.cjs
         env:
           fileToUpdate: './public/module.json'
-          newManifest: https://github.com/SplittermondFoundry/splittermond-item-piles/releases/download/${{env.prefixedVersion}}/system.json
+          newManifest: https://github.com/SplittermondFoundry/splittermond-item-piles/releases/download/${{env.prefixedVersion}}/module.json
           newDownload: https://github.com/SplittermondFoundry/splittermond-item-piles/releases/download/${{env.prefixedVersion}}/${{env.outputFile}}
       - name: Configure npm for GitHub Packages
         run: npm set "//npm.pkg.github.com/:_authToken=${{secrets.GITHUB_TOKEN}}"
@@ -57,7 +57,7 @@ jobs:
         run: |
           git config user.name github-actions[bot]
           git config user.email github-actions[bot]@github.com
-          git add public/system.json package.json  package-lock.json
+          git add public/module.json package.json  package-lock.json
           git commit -m "Update version to ${{github.event.inputs.version}}"
           git tag ${{env.prefixedVersion}}
           git push 
