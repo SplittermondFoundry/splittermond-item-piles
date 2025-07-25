@@ -1,0 +1,41 @@
+{
+  "id": "splittermond-item-piles",
+  "title": "Item Piles: Splittermond",
+  "version": "1.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13",
+    "maximum": "13"
+  },
+  "authors": [
+    {
+      "name": "m-2squared",
+      "flags": {}
+    }
+  ],
+  "scripts": [],
+  "esmodules": [
+    "./splittermond-item-piles.js"
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "splittermond",
+        "type": "system"
+      }
+    ],
+    "requires": [
+      {
+        "id": "item-piles",
+        "type": "module",
+        "compatibility": {
+          "minimum": "3.2.9",
+          "verified": "3.2.9"
+        }
+      }
+    ]
+  },
+  "url": "https://github.com/SplittermondFoundry/splittermond-item-piles",
+  "manifest": "https://raw.githubusercontent.com/SplittermondFoundry/splittermond-item-piles/main/public/module.json",
+  "download": "https://github.com/SplittermondFoundry/Splittermond/releases/download/v0.1.0/splittermond-item-piles-0.1.0.zip"
+}

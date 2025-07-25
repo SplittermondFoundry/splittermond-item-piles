@@ -1,0 +1,41 @@
+{
+  "name": "@SplittermondFoundry/splittermond-item-piles",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/splittermond-item-piles.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite serve --config config/vite.config.mts",
+    "typecheck": "tsc",
+    "test": "npm run typecheck && mocha --config config/mocharc.json src",
+    "build": "npm run test && vite build --config config/vite.config.mts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SplittermondFoundry/splittermond-item-piles.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "author": "m-2squared",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@splittermondfoundry/splittermond": "13.2.2",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/chai": "^5.0.0",
+    "@types/mocha": "^10.0.7",
+    "@types/sinon": "^17.0.3",
+    "chai": "^5.0.0",
+    "jsdom": "^26.0.0",
+    "mocha": "^11.0.0",
+    "sinon": "^21.0.0",
+    "tsx": "^4.17.0",
+    "typescript": "^5.6.3",
+    "vite": "^7.0.0"
+  }
+}

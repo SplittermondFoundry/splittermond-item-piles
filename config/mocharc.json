@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/mocharc.json",
+  "extension": ["js", ".ts"],
+  "spec": ["src/**/*.spec.ts", "src/**/*.test.ts"],
+  "recursive": true,
+  "require": [
+    "src/foundryMocks.js",
+    "tsx"
+   ],
+  "ui": "bdd"
+}
