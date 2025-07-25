@@ -1,4 +1,4 @@
-name: Release new Splittermond version
+name: "Release new ItemPiles: Splittermond version"
 permissions:
   contents: write
   packages: write
@@ -34,7 +34,7 @@ jobs:
       - name: Set new version in system.json
         run: node ./.github/scripts/index.cjs
         env:
-          fileToUpdate: './public/system.json'
+          fileToUpdate: './public/module.json'
           version: ${{github.event.inputs.version}}
       - name: Set new version in package.json
         run: node ./.github/scripts/index.cjs
@@ -44,9 +44,9 @@ jobs:
       - name: Set new paths in System.json
         run: node ./.github/scripts/replace_links.cjs
         env:
-          fileToUpdate: './public/system.json'
-          newManifest: https://github.com/SplittermondFoundry/splittermond/releases/download/${{env.prefixedVersion}}/system.json
-          newDownload: https://github.com/SplittermondFoundry/Splittermond/releases/download/${{env.prefixedVersion}}/${{env.outputFile}}
+          fileToUpdate: './public/module.json'
+          newManifest: https://github.com/SplittermondFoundry/splittermond-item-piles/releases/download/${{env.prefixedVersion}}/system.json
+          newDownload: https://github.com/SplittermondFoundry/splittermond-item-piles/releases/download/${{env.prefixedVersion}}/${{env.outputFile}}
       - name: Install dependencies
         run: npm install
       - name: Build
@@ -80,11 +80,11 @@ jobs:
           tag_name: v${{github.event.inputs.version}}
           files: |
             ${{env.outputFile}}
-            dist/system.json
+            dist/module.json
       - name: Release to Foundry
         run: node ./.github/scripts/publish_to_foundry.mjs
         env:
           AUTH_TOKEN: ${{secrets.FOUNDRY_VTT_PUBLISH_TOKEN}}
-          SYSTEM_JSON_PATH: './dist/system.json'
+          MODULE_JSON_PATH: './dist/module.json'
           DRY_RUN: 'false'
 
