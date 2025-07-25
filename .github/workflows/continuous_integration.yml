@@ -1,4 +1,4 @@
-name: Splittermond CI
+name: Splittermond Item Piles CI
 
 on:
   pull_request:
