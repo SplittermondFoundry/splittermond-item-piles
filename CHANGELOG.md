@@ -1,3 +1,6 @@
+## v1.0.2
+* Adapt to Splittermond 13.2.3
+ 
 ## v1.0.1
 ### Bug Fixes
 * Fix issues in manifest file

@@ -4,7 +4,7 @@
   "version": "1.0.1",
   "compatibility": {
     "minimum": "13",
-    "verified": "13",
+    "verified": "13.146",
     "maximum": "13"
   },
   "authors": [
@@ -30,7 +30,7 @@
         "type": "module",
         "compatibility": {
           "minimum": "3.2.9",
-          "verified": "3.2.9"
+          "verified": "3.2.18"
         }
       }
     ]
