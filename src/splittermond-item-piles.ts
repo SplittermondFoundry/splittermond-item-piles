@@ -88,12 +88,14 @@ export const release_13_config = {
     ITEM_COST_TRANSFORMER: (item: any, currencies: Currency[]) => {
 
         const costString = item.system.price as string;
+        console.debug("ItemPiles: Splittermond | Received cost string:", costString);
         let totalCost = 0;
         const cost = /^(?:(?<Solare>\d+)\s*[Ss])?\s*(?:(?<Lunare>\d+)\s*[Ll])?\s*(?:(?<Telare>\d+)\s*[Tt])?$/.exec(costString)?.groups;
 
         totalCost = totalCost + parseInt(cost?.Solare ?? "0") * (currencies.find(c => c.name === "Solare")?.exchangeRate ?? 0);
         totalCost = totalCost + parseInt(cost?.Lunare ?? "0") * (currencies.find(c => c.name === "Lunare")?.exchangeRate ?? 0);
         totalCost = totalCost + parseInt(cost?.Telare ?? "0") * (currencies.find(c => c.name === "Telare")?.exchangeRate ?? 0);
+        console.debug(`ItemPiles: Splittermond | Calculated total price:${costString}L`);
         return totalCost;
     }
 }
@@ -102,11 +104,13 @@ Hooks.once("item-piles-ready", async () => {
     const VERSIONS = {
         "13.2.2": release_13_config,
         "13.2.3": release_13_config,
-        "13.2.4": release_13_config
+        "13.2.4": release_13_config,
+        "13.2.5": release_13_config
     }
 
     // Add configuration into item piles via the API
     for (const [version, data] of Object.entries(VERSIONS)) {
         await game.itempiles.API.addSystemIntegration(data, version);
     }
+    console.log("ItemPiles: Splittermond | Initialized Item Piles integration for Splittermond");
 });
