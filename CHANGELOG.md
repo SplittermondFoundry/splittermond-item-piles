@@ -1,3 +1,6 @@
+## v1.0.6
+* Adapt to Splittermond 13.3.0
+
 ## v1.0.5
 * Adapt to Splittermond 13.2.5
 * Improved logging
