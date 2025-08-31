@@ -1,3 +1,6 @@
+## v1.0.8
+* Adapt to Splittermond 13.4.0
+
 ## v1.0.7
 * Adapt to Splittermond 13.3.1
   
