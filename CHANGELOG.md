@@ -1,7 +1,7 @@
 # Changelog
 
 ## v1.0.12
-* Adapt to Splittermond 13.6.0
+* Adapt to Splittermond 13.6.1
 
 ## v1.0.11
 * Adapt to Splittermond 13.5.1
