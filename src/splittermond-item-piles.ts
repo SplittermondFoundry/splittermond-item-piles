@@ -115,6 +115,7 @@ Hooks.once("item-piles-ready", async () => {
         "13.6.1": release_13_config,
         "13.6.2": release_13_config,
         "13.6.3": release_13_config,
+        "13.6.4": release_13_config,
     }
 
     // Add configuration into item piles via the API
