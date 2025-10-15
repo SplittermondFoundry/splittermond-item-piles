@@ -1,6 +1,6 @@
 {
   "name": "@SplittermondFoundry/splittermond-item-piles",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "",
   "main": "src/splittermond-item-piles.js",
   "type": "module",
