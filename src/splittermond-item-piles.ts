@@ -102,13 +102,6 @@ export const release_13_config = {
 
 Hooks.once("item-piles-ready", async () => {
     const VERSIONS = {
-        "13.2.2": release_13_config,
-        "13.2.3": release_13_config,
-        "13.2.4": release_13_config,
-        "13.2.5": release_13_config,
-        "13.3.0": release_13_config,
-        "13.3.1": release_13_config,
-        "13.4.0": release_13_config,
         "13.5.0": release_13_config,
         "13.5.1": release_13_config,
         "13.5.2": release_13_config,
@@ -117,6 +110,7 @@ Hooks.once("item-piles-ready", async () => {
         "13.6.3": release_13_config,
         "13.6.6": release_13_config,
         "13.6.7": release_13_config,
+        "13.6.8": release_13_config,
     }
 
     // Add configuration into item piles via the API
