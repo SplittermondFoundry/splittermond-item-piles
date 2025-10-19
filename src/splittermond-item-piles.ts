@@ -101,21 +101,42 @@ export const release_13_config = {
 }
 
 Hooks.once("item-piles-ready", async () => {
-    const VERSIONS = {
-        "13.5.0": release_13_config,
-        "13.5.1": release_13_config,
-        "13.5.2": release_13_config,
-        "13.6.1": release_13_config,
-        "13.6.2": release_13_config,
-        "13.6.3": release_13_config,
-        "13.6.6": release_13_config,
-        "13.6.7": release_13_config,
-        "13.6.8": release_13_config,
-    }
-
-    // Add configuration into item piles via the API
-    for (const [version, data] of Object.entries(VERSIONS)) {
-        await game.itempiles.API.addSystemIntegration(data, version);
+    //Autogenerate versions so that we don't have to manually update for every patch. We're accepting the creation
+    //of versions that don't even exist.
+    //If the data model changes, create a new config and register that separately.
+    const v13Versions = generateVersionList("13.5.0", "13.15.0");
+    for (const version of v13Versions) {
+        await game.itempiles.API.addSystemIntegration(release_13_config, version);
     }
     console.log("ItemPiles: Splittermond | Initialized Item Piles integration for Splittermond");
 });
+
+function generateVersionList(start: string, end: string): string[] {
+    const [startMajor, startMinor, startPatch] = start.split('.').map(Number);
+    const [endMajor, endMinor, endPatch] = end.split('.').map(Number);
+
+    const result: string[] = [];
+
+    for (let major = startMajor; major <= endMajor; major++) {
+        const minMinor = major === startMajor ? startMinor : 0;
+        const maxMinor = major === endMajor ? endMinor : 15;
+        for (let minor = minMinor; minor <= Math.min(maxMinor, 15); minor++) {
+            const minPatch =
+                major === startMajor && minor === startMinor ? startPatch : 0;
+            const maxPatch =
+                major === endMajor && minor === endMinor ? endPatch : 25;
+            for (let patch = minPatch; patch <= Math.min(maxPatch, 25); patch++) {
+                const version = `${major}.${minor}.${patch}`;
+                result.push(version);
+                if (
+                    major === endMajor &&
+                    minor === endMinor &&
+                    patch === endPatch
+                ) {
+                    return result;
+                }
+            }
+        }
+    }
+    return result;
+}

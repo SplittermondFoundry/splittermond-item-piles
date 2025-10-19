@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.0
+* Adapt to Splittermond 13.6.9
+* Now autogenerates version compatibilities.
+
 ## v1.0.17
 * Adapt to Splittermond 13.6.8
   
