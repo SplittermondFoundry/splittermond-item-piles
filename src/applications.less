@@ -1,0 +1,171 @@
+@import "./application-mixins.less";
+
+.application {
+    z-index: 0; // makes application backgrounds appear transparent by default
+}
+
+//Most Freefloating Applications, like sheets
+form.application:not(.journal-entry) {
+    .border-paper();
+    .filled-border();
+
+    .window-header {
+        .window-header-def();
+    }
+
+    .window-content {
+        .window-body-def();
+    }
+}
+
+//DialogV2
+dialog.application.dialog {
+    .border-paper();
+    .filled-border();
+
+    .window-header {
+        .window-header-def();
+    }
+
+    .window-content {
+        .window-body-def();
+    }
+}
+
+.splittermond.dialog-check .dialog-content {
+    --input-height: 0; //makes buttons and inputs smaller
+
+    input {
+        max-width: 200px;
+    }
+
+    input[name="maneuvers"],
+    input[name="emphasis"] {
+        display: none;
+    }
+
+    .resistance-selectors {
+        justify-content: center;
+    }
+}
+
+.application-override-mixin() {
+    background: var(--splittermond-background-parchment-blue), var(--splittermond-background-parchment);
+    background-position: top right;
+    background-blend-mode: var(--background-parchment-splittermond-blend-mode);
+    background-clip: padding-box;
+}
+
+.chat-message:extend(.border-paper) {
+    border-image-repeat: repeat;
+    z-index: 0;
+    position: relative;
+
+    .message-header {
+        color: rgba(var(--color-text-secondary_rgb), 0.7);
+    }
+}
+
+#settings-config {
+    section.window-content aside.flexcol {
+        search input {
+            background: none;
+            border: 1px;
+            border-style: solid;
+            color: var(--color-text-secondary);
+        }
+    }
+    aside nav.tabs > button {
+        .count {
+            color: @color-text;
+        }
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+}
+
+.splittermond.application.species.wizard {
+    div > header > h1 {
+        text-align: center;
+    }
+    //style the attribute number modifiers to have buttons below each other and enough space for numbers
+    .attribute-mod {
+        > div {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+
+        .value {
+            min-width: 1em;
+            width: 1em;
+            text-align: right;
+            display: inline-block;
+        }
+    }
+    //places the buttons at the bottom of the page in the center
+    footer {
+        justify-content: center;
+    }
+}
+
+.splittermond.tick-addition-dialog {
+    div {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    input {
+        width: auto;
+        text-align: right;
+        border: 1px solid #ccc;
+        padding: 2px 4px;
+        margin: 0;
+        display: inline-block;
+    }
+
+    label {
+        display: inline-block;
+        margin-left: 0.5em;
+    }
+}
+
+form.application.splittermond.sheet {
+    .filled-border();
+    .border-paper();
+    img {
+        cursor: pointer;
+    }
+    &.actor .window-content > nav {
+        .nav-tab-spans-sheet();
+    }
+
+    &.actor {
+        .rest-action {
+            .buttons-span-width();
+        }
+    }
+
+    .window-content {
+        --input-height: 0;
+        .application-override-mixin();
+        .description-spans-app();
+
+        .editor {
+            margin-top: 5px;
+        }
+        nav ~ section h3 {
+            .small-sheet-header();
+        }
+    }
+
+    section button.button-inline[data-action="toggle-equipped"] {
+        .inobtrusive-toggles();
+    }
+
+    //Prevents having space around the <pre> element used for the help text of min-attributes
+    &.item .help-text pre {
+        margin: 0;
+    }
+}

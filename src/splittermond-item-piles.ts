@@ -19,7 +19,7 @@ export const release_13_config = {
     VERSION: "1.0",
 
     // The actor class type is the type of actor that will be used for the default item pile actor that is created on first item drop.
-    ACTOR_CLASS_TYPE: "character",
+    ACTOR_CLASS_TYPE: "npc",
 
     ITEM_CLASS_LOOT_TYPE: "",
 
@@ -105,7 +105,8 @@ Hooks.once("item-piles-ready", async () => {
     //of versions that don't even exist.
     //If the data model changes, create a new config and register that separately.
     const v13Versions = generateVersionList("13.5.0", "13.15.0");
-    for (const version of v13Versions) {
+    const v14Versions = generateVersionList("14.0.0", "14.15.0");
+    for (const version of [...v13Versions, ...v14Versions]) {
         await game.itempiles.API.addSystemIntegration(release_13_config, version);
     }
     console.log("ItemPiles: Splittermond | Initialized Item Piles integration for Splittermond");

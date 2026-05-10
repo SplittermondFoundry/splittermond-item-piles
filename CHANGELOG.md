@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.0
+* Adapt to Foundry v14, splittermond v14, item-piles 3.3
+* add css to ease style differences
+
 ## v1.1.0
 * Adapt to Splittermond 13.6.9
 * Now autogenerates version compatibilities.

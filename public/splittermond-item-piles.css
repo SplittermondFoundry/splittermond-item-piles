@@ -1,0 +1,144 @@
+/* Consolidated from src/application-mixins.less and src/applications.less. */
+/* NOTE: Original LESS-only mixins from variables.less are not reproduced here. */
+
+.application {
+    z-index: 0;
+}
+
+.app.item-piles-app {
+    color: var(--color-text-secondary);
+    background: var(--splittermond-background-parchment);
+}
+
+.app.item-piles-app .window-header {
+    flex: 0 0 30px;
+    overflow: hidden;
+    padding: 0 8px;
+    background: none;
+    border: none;
+    color: #3a3a3a;
+}
+
+.app.item-piles-app .window-header .window-title {
+    color: #3a3a3a;
+    font-variant-numeric: lining-nums;
+    font-weight: normal;
+    max-width: unset;
+}
+
+.app.item-piles-app .window-header button.header-control:not(.icon) {
+    color: #3a3a3a;
+    width: 22px;
+    height: 22px;
+}
+
+.app.item-piles-app .window-header button.header-control.icon {
+    color: #3a3a3a;
+}
+
+.app.item-piles-app .window-content {
+    color: var(--color-text-secondary);
+    background: var(--splittermond-background-parchment);
+    margin: 5px;
+    margin-top: 0;
+    padding: 8px;
+    position: relative;
+}
+
+.app.item-piles-app .window-content label {
+    color: #3a3a3a;
+}
+
+.app.item-piles-app .window-content button:not(.icon) label {
+    color: var(--color-text);
+}
+
+.app.item-piles-app button:not(.inline) {
+    border: 1px solid var(--color-shiny-border-dark, #5a4f45);
+    color: var(--color-text);
+    font-family: var(--font-secondary, inherit);
+    height: unset;
+    line-height: 1.5;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-origin: border-box;
+
+    background-image:
+    var(--image-grunge, none), linear-gradient(var(--color-secondary), var(--color-secondary)), var(--image-noise, none),
+    repeating-linear-gradient(
+            60deg,
+            var(--color-shiny-border-dark),
+            var(--color-shiny-border-light),
+            var(--color-shiny-border-dark)
+    );
+    background-clip: padding-box, padding-box, border-box, border-box;
+    background-blend-mode: normal, multiply, normal, normal;
+
+    text-shadow:
+            0 0 3px rgb(0, 0, 0),
+            0px -1px 0px rgb(0, 0, 0, 0.5),
+            0px 1px 0px rgb(255, 255, 255, 0.5);
+
+    transition: box-shadow 0.1s;
+
+    box-shadow:
+            inset 0 -8px 8px 0px rgba(0, 0, 0, 0.3),
+            inset 0 1px 1px rgba(255, 255, 255, 0.3);
+
+    position: relative;
+}
+
+.app.item-piles-app button:not(.inline):hover,
+.app.item-piles-app button:not(.inline):focus {
+    box-shadow:
+            inset 0 -8px 8px 0px rgba(0, 0, 0, 0.15),
+            inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    text-shadow:
+            0 0 3px rgb(0, 0, 0),
+            0px -1px 0px rgb(0, 0, 0, 0.5),
+            0px 1px 0px rgb(255, 255, 255, 0.5);
+}
+
+.app.item-piles-app button:not(.inline):active {
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+    text-shadow:
+            0 0 3px rgb(0, 0, 0),
+            0px -1px 0px rgb(0, 0, 0, 0.3),
+            0px 1px 0px rgb(255, 255, 255, 0.3);
+}
+
+.app.item-piles-app button:not(.inline):disabled {
+    color: inherit;
+    background: transparent;
+    background-color: rgba(128, 128, 128, 0.1);
+    box-shadow: none;
+    opacity: 0.8;
+}
+
+.app.item-piles-app button:not(.inline):disabled::before {
+    background: transparent;
+}
+
+.app.item-piles-app button.button-inline:not(.icon) {
+    display: inline-block;
+
+    font-size: var(--font-size-small, 0.875rem);
+    border: 1px solid var(--color-shiny-border-dark, #5a4f45);
+    width: 22px;
+    height: 22px;
+
+.app.item-piles-app button.button-inline:not(.icon)::before {
+    display: none;
+    content: unset;
+}
+
+.app.item-piles-app button.button-inline:not(.icon) {
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    vertical-align: middle;
+    line-height: 22px;
+}
+
+.app.item-piles-app button.button-inline:not(.icon) > i {
+    margin: 0;
+}
