@@ -1,7 +1,7 @@
 {
   "id": "splittermond-item-piles",
   "title": "Item Piles: Splittermond",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "compatibility": {
     "minimum": "14",
     "verified": "14.360",
@@ -44,5 +44,5 @@
   },
   "url": "https://github.com/SplittermondFoundry/splittermond-item-piles",
   "manifest": "https://raw.githubusercontent.com/SplittermondFoundry/splittermond-item-piles/main/public/module.json",
-  "download": "https://github.com/SplittermondFoundry/splittermond-item-piles/releases/download/v1.1.0/splittermond-item-piles-1.1.0.zip"
+  "download": "https://github.com/SplittermondFoundry/splittermond-item-piles/releases/download/v1.2.0/splittermond-item-piles-1.2.0.zip"
 }
